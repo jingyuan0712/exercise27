@@ -1,41 +1,39 @@
-/* 基本頁面背景與容器 */
 body {
-    background-color: #6fb1fc; /* 藍色背景 */
+    background-color: #6fb1fc;
     display: flex;
     justify-content: center;
     padding: 20px;
     margin: 0;
-    font-family: sans-serif;
 }
 
 .main-card {
     background-color: white;
-    width: 90%;
+    width: 95%;
     max-width: 800px;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 15px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* 頂部綠色區塊 */
 .header-box {
     background-color: #b8d96a;
     height: 150px;
     border-radius: 5px;
 }
 
-/* 中間與底部區塊的通用設定 */
-.mid-section, .footer-section {
+/* 讓容器預設為橫向排列 (圖 b) */
+.row-container {
     display: flex;
+    flex-direction: row; 
     gap: 10px;
 }
 
 .cyan-box {
     background-color: #6ec4cf;
-    flex: 1; /* 平分寬度 */
-    height: 120px;
+    flex: 1; /* 讓三個框框平分寬度 */
+    height: 150px;
     border-radius: 5px;
 }
 
@@ -46,19 +44,14 @@ body {
     border-radius: 5px;
 }
 
-/* --- 關鍵：響應式設定 --- */
-
-/* 當寬度小於 480px 時切換佈局 (圖 a) */
+/* --- 關鍵修正：響應式斷點 --- */
+/* 當寬度小於 480px 時，執行以下內容 (圖 a) */
 @media (max-width: 480px) {
-    .mid-section, .footer-section {
-        flex-direction: column; /* 改為垂直堆疊 */
+    .row-container {
+        flex-direction: column; /* 將橫向改為垂直堆疊 */
     }
 
     .cyan-box {
-        height: 80px; /* 手機版可以稍微縮小高度 */
+        height: 100px; /* 在手機版可以微調高度 */
     }
-    
-    /* 底部灰色區塊在手機版如果是兩列排法，可以這樣改： */
-    /* .footer-section { flex-wrap: wrap; flex-direction: row; } 
-       .gray-box { flex: 1 0 45%; } */
 }
