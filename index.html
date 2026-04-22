@@ -9,14 +9,17 @@
 <style>
 body{
     background: #6ea0d1;
+    padding: 30px;
 }
 
-/* 外框 */
+/* ⭐ 修正：不要固定太小 */
 .container{
-    width: 300px;
+    width: 90%;
+    max-width: 800px;
     margin: auto;
     background: #f5f5f5;
     padding: 10px;
+    border-radius: 10px;
 }
 
 /* 上面 */
@@ -38,10 +41,10 @@ body{
     margin: 5px;
 }
 
-/* ⭐ 大螢幕 footer（固定一排4個） */
+/* ⭐ 大螢幕 footer */
 .footer{
     display: flex;
-    flex-wrap: nowrap;   /* ⭐ 關鍵 */
+    flex-wrap: nowrap;   /* 一排4個 */
 }
 
 .footer div{
@@ -67,7 +70,6 @@ body{
     .footer div{
         width: 48%;
     }
-
 }
 </style>
 
