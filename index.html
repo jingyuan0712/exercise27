@@ -38,9 +38,10 @@ body{
     margin: 5px;
 }
 
-/* 下面 */
+/* ⭐ 大螢幕 footer（固定一排4個） */
 .footer{
     display: flex;
+    flex-wrap: nowrap;   /* ⭐ 關鍵 */
 }
 
 .footer div{
@@ -50,13 +51,15 @@ body{
     margin: 5px;
 }
 
-/* ⭐ RWD */
+/* ⭐ RWD（小於480px） */
 @media (max-width: 480px){
 
+    /* 中間變直排 */
     .middle{
         flex-direction: column;
     }
 
+    /* 下面變兩欄 */
     .footer{
         flex-wrap: wrap;
     }
@@ -74,20 +77,20 @@ body{
 
 <div class="container">
 
-<div class="header"></div>
+    <div class="header"></div>
 
-<div class="middle">
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
+    <div class="middle">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 
-<div class="footer">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-</div>
+    <div class="footer">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 
 </div>
 
