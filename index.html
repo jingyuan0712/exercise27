@@ -2,7 +2,10 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Exercise RWD</title>
+<!-- ⭐ 這行超重要，不然RWD不會動 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exercise 27</title>
 
 <style>
 body{
@@ -19,18 +22,18 @@ body{
     border-radius: 10px;
 }
 
-/* 區塊共用 */
+/* 共用 */
 .box{
     margin: 5px;
 }
 
-/* 上面大區塊 */
+/* 上面 */
 .header{
     height: 80px;
     background-color: #a8c95a;
 }
 
-/* 中間區塊 */
+/* 中間（三格） */
 .middle{
     display: flex;
 }
@@ -41,7 +44,7 @@ body{
     background-color: #5fa8b8;
 }
 
-/* 下面區塊 */
+/* 下面（四格） */
 .footer{
     display: flex;
 }
@@ -52,19 +55,21 @@ body{
     background-color: #ddd;
 }
 
-/* ⭐ 小於480px（手機） */
+/* ⭐ 手機版（小於480px） */
 @media (max-width: 480px){
 
+    /* 中間變直排 */
     .middle{
-        flex-direction: column;   /* 變直排 */
+        flex-direction: column;
     }
 
+    /* 下面變兩欄 */
     .footer{
         flex-wrap: wrap;
     }
 
     .footer .box{
-        width: 48%;              /* 兩欄 */
+        width: 48%;
     }
 }
 </style>
@@ -75,20 +80,20 @@ body{
 
 <div class="container">
 
-<div class="header box"></div>
+    <div class="header box"></div>
 
-<div class="middle">
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-</div>
+    <div class="middle">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
 
-<div class="footer">
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-</div>
+    <div class="footer">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
 
 </div>
 
