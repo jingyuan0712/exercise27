@@ -1,57 +1,25 @@
-body {
-    background-color: #6fb1fc;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    margin: 0;
-}
+/* --- 修正後的響應式設定 --- */
 
-.main-card {
-    background-color: white;
-    width: 95%;
-    max-width: 800px;
-    padding: 15px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.header-box {
-    background-color: #b8d96a;
-    height: 150px;
-    border-radius: 5px;
-}
-
-/* 讓容器預設為橫向排列 (圖 b) */
+/* 1. 確保基礎容器在空間不足時允許換行 */
 .row-container {
     display: flex;
     flex-direction: row; 
     gap: 10px;
+    flex-wrap: wrap; /* 加入這行作為保險 */
 }
 
-.cyan-box {
-    background-color: #6ec4cf;
-    flex: 1; /* 讓三個框框平分寬度 */
-    height: 150px;
-    border-radius: 5px;
-}
-
-.gray-box {
-    background-color: #f0f0f0;
-    flex: 1;
-    height: 60px;
-    border-radius: 5px;
-}
-
-/* --- 關鍵修正：響應式斷點 --- */
-/* 當寬度小於 480px 時，執行以下內容 (圖 a) */
-@media (max-width: 480px) {
+/* 2. 將斷點提高到 768px，確保涵蓋所有手機直向模式 */
+@media screen and (max-width: 768px) {
     .row-container {
-        flex-direction: column; /* 將橫向改為垂直堆疊 */
+        flex-direction: column; /* 強制改為垂直堆疊 */
     }
 
     .cyan-box {
-        height: 100px; /* 在手機版可以微調高度 */
+        width: 100%; /* 確保寬度填滿 */
+        height: 100px;
+    }
+
+    .gray-box {
+        width: 100%; /* 確保寬度填滿 */
     }
 }
